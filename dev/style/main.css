@@ -36,3 +36,7 @@ input {
   color: #fff;
   border-bottom: 0.2rem solid #fff;
 }
+
+.resultado{
+  display: none;
+}

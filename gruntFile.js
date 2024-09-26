@@ -121,15 +121,15 @@ module.exports = function(grunt) {
         watch: {
             less: {
                 files: ['src/styles/**/*.less'],
-                tasks: ['less:development', 'less:production'] // Atualiza dev e dist
+                tasks: ['less:development'] 
             },
             js: {
                 files: ['src/scripts/**/*.js'],
-                tasks: ['copy:dev', 'uglify:production'] // Atualiza dev e dist
+                tasks: ['copy:dev'] 
             },
             html: {
                 files: ['src/index.html'],
-                tasks: ['replace:dev', 'htmlmin:dist', 'replace:dist'] // Atualiza dev e dist
+                tasks: ['replace:dev'] 
             }
         },
 

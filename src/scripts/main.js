@@ -1,14 +1,22 @@
 
 document.addEventListener('DOMContentLoaded', function(){
-    console.log('iniciou');
-    document.getElementById('form-sorteador').addEventListener('submimt',function(e){
+    
+    document.getElementById('form-sorteador').addEventListener('submit',function(e){
         e.preventDefault()
-        console.log('ahah')
+        
         let numeroMaximo = document.querySelector('#numero-maximo').value;
         numeroMaximo = parseInt(numeroMaximo);
+        
+        let paragrafoResultado = document.createElement('p');
+        paragrafoResultado.classList.add('resultado');
+        paragrafoResultado.innerHTML = 'O número sorteado foi: <span id="resultado-valor"></span>';
 
-        let numeroaleatorio = Math.random() * numeroMaximo;
+        let numeroaleatorio = Math.floor(Math.random() * numeroMaximo) +1 ;
 
-        document.getElementById('resultado-valor').innerHTML = numeroaleatorio
+        let container = document.querySelector('.container');
+        container.appendChild(paragrafoResultado);
+
+        document.getElementById('resultado-valor').innerHTML = numeroaleatorio;
+
     })
 });
